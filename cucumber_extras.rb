@@ -9,7 +9,7 @@ after_bundler do
   OPTS
 
   # Add autotest runner formats
-  gsub_file "config/cucumber.yml", /^(rerun: .* ~@wip)$"$/, '\1 ' <<-'YAML'.gsub(/^ {4}/, '')
+  gsub_file "config/cucumber.yml", /^(rerun: .* ~@wip)$/, '\1 ' <<-'YAML'.gsub(/^ {4}/, '')
     --tags ~@proposed
     autotest: <%= autotest_opts %> features
     autotest-all: <%= autotest_all_opts %> features
