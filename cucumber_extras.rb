@@ -1,5 +1,10 @@
 say_recipe 'Cucumber extras'
 
+# pop a browser window in cucumber and other tasks
+gem 'launchy', :env => :test
+
+gem 'database_cleaner', :env => :test
+
 after_bundler do
   # Add autotest runner erb opts
   gsub_file "config/cucumber.yml", /^(std_opts = .*wip")$/, '\1' << <<-'OPTS'.gsub(/^ {4}/, '')
