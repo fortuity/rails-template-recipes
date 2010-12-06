@@ -5,6 +5,8 @@ gem 'launchy', :group => :test
 
 gem 'database_cleaner', :group => :test
 
+gem 'factory_girl_rails'
+
 after_bundler do
   # Add autotest runner erb opts
   gsub_file "config/cucumber.yml", /^(std_opts = .*wip")$/, '\1' << <<-'OPTS'.gsub(/^ {4}/, '')
