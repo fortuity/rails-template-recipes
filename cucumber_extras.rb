@@ -1,9 +1,9 @@
 say_recipe 'Cucumber extras'
 
 # pop a browser window in cucumber and other tasks
-gem 'launchy', :env => :test
+gem 'launchy', :group => :test
 
-gem 'database_cleaner', :env => :test
+gem 'database_cleaner', :group => :test
 
 after_bundler do
   # Add autotest runner erb opts

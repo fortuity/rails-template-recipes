@@ -1,5 +1,5 @@
 say_recipe 'autotest'
 
-gem 'autotest', :env => :test
-gem 'autotest-growl', :env => :test
+gem 'autotest', :group => :test
+gem 'autotest-growl', :group => :test
 
