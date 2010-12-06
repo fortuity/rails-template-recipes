@@ -12,7 +12,12 @@ file '.gitignore', <<-'IGNORES'.gsub(/^ {2}/, '')
   /doc/api/
   /doc/app/
   /config/database.yml
+  /config/config.yml
   /db/*.sqlite3
+  /db/*.sqlite3-journal
+  /db/*.javadb/
+  /derby.log
+  **.war
   /coverage/
   /coverage.data
   /public/system/
