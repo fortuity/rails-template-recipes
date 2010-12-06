@@ -1,13 +1,32 @@
 say_recipe 'rvm'
 
-rvm_env = "default@#{@app_name}"
+# load in RVM environment
+if ENV['MY_RUBY_HOME'] && ENV['MY_RUBY_HOME'].include?('rvm')
+  begin
+    rvm_path     = File.dirname(File.dirname(ENV['MY_RUBY_HOME']))
+    rvm_lib_path = File.join(rvm_path, 'lib')
+    $LOAD_PATH.unshift rvm_lib_path
 
-# create rvmrc
-file '.rvmrc' "rvm #{rvm_env}"
+    require 'rvm'
+    RVM.use_from_path! File.dirname(File.dirname(__FILE__))
+  rescue LoadError
+    # RVM is unavailable at this point.
+    raise "RVM ruby lib is currently unavailable."
+  end
+else
+  raise "RVM ruby lib is currently unavailable."
+end
+
+rvm_env = "default@#{app_name}"
+
+# create rvmrc file
+create_file '.rvmrc' do
+  "rvm #{rvm_env}"
+end
 
 # trust the rvmrc
-run "rvm rvmrc trust #{@app_path}"
+run "rvm rvmrc trust #{app_path}"
 
-# switch into the ruby/gemset
-run "rvm use #{rvm_env}"
-
+# create and switch into gemset
+RVM.gemset_create app_name
+RVM.gemset_use! app_name
