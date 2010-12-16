@@ -27,7 +27,7 @@ say_wizard "Creating RVM gemset #{app_name}..."
 RVM.gemset_create app_name
 
 # trust the rvmrc
-run "echo rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
+run "rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
 
 say_wizard "Switching to use RVM gemset #{app_name}"
 RVM.gemset_use! app_name
