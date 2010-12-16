@@ -29,3 +29,7 @@ run "rvm rvmrc trust #{File.expand_path(app_path)}"
 # create and switch into gemset
 RVM.gemset_create app_name
 RVM.gemset_use! app_name
+
+unless run("gem list --no-versions").split("\n").include?("bundler")
+  run "gem install bundler --no-rdoc --no-ri"
+end
