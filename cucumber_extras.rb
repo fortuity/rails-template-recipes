@@ -5,7 +5,7 @@ gem 'launchy', :group => :test
 
 gem 'database_cleaner', :group => :test
 
-gem 'factory_girl_rails'
+gem 'factory_girl_rails', :group => [:development, :test]
 
 after_bundler do
   # Add autotest runner erb opts
