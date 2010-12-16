@@ -18,11 +18,10 @@ end
 
 rvm_env = "default@#{app_name}"
 
-say_wizard "Creating RVM gemset #{app_name}..."
+say_wizard "Creating RVM gemset #{app_name}"
 RVM.gemset_create app_name
 
-# trust the rvmrc
-#run "rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
+say_wizard "Trusting project's .rvmrc"
 run "rvm rvmrc trust"
 
 say_wizard "Switching to use RVM gemset #{app_name}"
