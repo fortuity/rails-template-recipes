@@ -24,7 +24,7 @@ create_file '.rvmrc' do
 end
 
 # trust the rvmrc
-run "rvm rvmrc trust #{app_path}"
+run "rvm rvmrc trust #{File.expand_path(app_path)}"
 
 # create and switch into gemset
 RVM.gemset_create app_name
