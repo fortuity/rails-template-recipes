@@ -18,19 +18,20 @@ end
 
 rvm_env = "default@#{app_name}"
 
-# create rvmrc file
-create_file '.rvmrc' do
-  "rvm #{rvm_env}"
-end
-
 say_wizard "Creating RVM gemset #{app_name}..."
 RVM.gemset_create app_name
 
 # trust the rvmrc
-run "rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
+#run "rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
+run "rvm rvmrc trust"
 
 say_wizard "Switching to use RVM gemset #{app_name}"
 RVM.gemset_use! app_name
+
+# create rvmrc file
+create_file '.rvmrc' do
+  "rvm #{rvm_env}"
+end
 
 if run("gem list --installed bundler", :capture => true) =~ /false/
   run "gem install bundler --no-rdoc --no-ri"
