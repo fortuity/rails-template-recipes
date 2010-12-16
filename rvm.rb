@@ -23,13 +23,15 @@ create_file '.rvmrc' do
   "rvm #{rvm_env}"
 end
 
-# trust the rvmrc
-run "rvm rvmrc trust #{File.expand_path(app_path)}"
-
-# create and switch into gemset
+say_wizard "Creating RVM gemset #{app_name}..."
 RVM.gemset_create app_name
+
+# trust the rvmrc
+run "echo rvm rvmrc trust #{File.dirname(File.expand_path(app_path))}"
+
+say_wizard "Switching to use RVM gemset #{app_name}"
 RVM.gemset_use! app_name
 
-unless run("gem list --no-versions").split("\n").include?("bundler")
+if run("gem list --installed bundler", :capture => true) =~ /false/
   run "gem install bundler --no-rdoc --no-ri"
 end
