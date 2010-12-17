@@ -17,7 +17,7 @@ create_file 'lib/tasks/init_database_yaml.rake' do
     end
 
     # Add namespaced tasks to default :init task
-    Rake::Task["init"].enhance { Rake::Task["init:database_yaml"].invoke }
+    Rake::Task["init"].enhance ["init:database_yaml"]
   RAKE
 end
 
