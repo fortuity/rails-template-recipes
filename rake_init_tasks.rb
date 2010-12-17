@@ -1,7 +1,7 @@
 say_recipe 'Create rake init:* tasks'
 
 create_file 'lib/tasks/init.rake' do
-  <<-'RAKE'.gsub(/^ {6}/, '')
+  <<-'RAKE'.gsub(/^ {4}/, '')
     unless Rake::Task.task_defined?("init")
       desc "Initializes the rails environment for development"
       task :init do ; end

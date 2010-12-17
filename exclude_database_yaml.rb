@@ -1,7 +1,7 @@
 say_recipe 'Exclude database.yml from version control'
 
 create_file 'lib/tasks/init_database_yaml.rake' do
-  <<-'RAKE'.gsub(/^ {6}/, '')
+  <<-'RAKE'.gsub(/^ {4}/, '')
     namespace :init do
       task 'database_yaml' do
         unless File.exists?(File.join('config', 'database.yml'))
