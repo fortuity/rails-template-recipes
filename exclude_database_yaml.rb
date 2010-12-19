@@ -25,7 +25,7 @@ end
 after_bundler do
   say_wizard "Adding Java platform detection in database.yml"
   gsub_file "config/database.yml", /^(\s*adapter:) (.+)$/,
-    %q{\1 <%= RUBY_PLATFORM =~ /java/ ? '\2' : '\2' %>}
+    %q{\1 <%= RUBY_PLATFORM =~ /java/ ? 'jdbc\2' : '\2' %>}
 
   say_wizard "Creating config/database.sample.yml for version control"
   FileUtils.cp "config/database.yml", "config/database.sample.yml"
