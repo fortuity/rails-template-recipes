@@ -6,7 +6,7 @@ gem 'autotest-growl', :group => :test
 # if rails project is being generated from a mac, then add a mac bundler group
 # and exclude the group when bundler'ing on other platforms
 if RUBY_PLATFORM =~ /darwin/
-  gem 'autotest-fsevent', :group => :mac
+  gem 'autotest-fsevent', :group => :test_mac
 end
 
 create_file 'lib/tasks/auto.rake' do
