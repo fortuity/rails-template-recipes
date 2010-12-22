@@ -1,5 +1,7 @@
 say_recipe 'ActiveRecord extras'
 
+gsub_file "Gemfile", /^gem 'sqlite3-ruby', :require => 'sqlite3'$/, ''
+
 gem 'mysql',
   :group => :production, :platforms => :ruby
 gem 'activerecord-jdbcmysql-adapter',
