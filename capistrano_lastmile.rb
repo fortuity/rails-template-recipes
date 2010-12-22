@@ -4,6 +4,7 @@ gem 'capistrano',           :group => :development
 gem 'capistrano-ext',       :group => :development, :require => nil
 gem 'capistrano-lastmile',  :group => :development, :require => nil,
   :git => "git://github.com/fnichol/capistrano-lastmile.git"
+gem 'ffi-ncurses',          :group => :development, :platforms => :jruby
 
 after_bundler do
   file 'Capfile', <<-CAPFILE.gsub(/^ {4}/, '')
