@@ -11,22 +11,40 @@ after_bundler do
     require "rubygems"
     require "bundler/setup"
 
+    # override default staging environments set by capistrano-lastmile
+    # set :stages,          %w{uat testing staging production}
+    # override default stage set by capistrano-lastmile
+    # set :default_stage,   "uat"
+
+    # enable default-disabled recipes
+    #set :use_config_yaml, true
+    #set :use_whenever,    true
+
     require "capistrano/lastmile"
   CAPFILE
 
   file 'config/deploy.rb', <<-DEPLOY.gsub(/^ {4}/, '')
+    # general deployment configuration
+    # please put specific deployment config in config/deploy/*.rb
+
     set :application, "#{app_name}"
 
     set :repository,  "git://github.com/"
   DEPLOY
 
   file 'config/deploy/staging.rb', <<-STAGING.gsub(/^ {4}/, '')
+    # STAGING-specific deployment configuration
+    # please put general deployment config in config/deploy.rb
+
     set :db_username,   "#{app_name[0,11]}_stg"
 
     set :deploy_server, "vagrant"
   STAGING
 
   file 'config/deploy/production.rb', <<-PRODUCTION.gsub(/^ {4}/, '')
+    # PRODUCTION-specific deployment configuration
+    # please put general deployment config in config/deploy.rb
+
     set :db_username,   "#{app_name[0,11]}_prd"
 
     set :deploy_server, "prd.example.com"
