@@ -12,9 +12,9 @@ after_bundler do
     require "bundler/setup"
 
     # override default staging environments set by capistrano-lastmile
-    # set :stages,          %w{uat testing staging production}
+    #set :stages,          %w{uat testing staging production}
     # override default stage set by capistrano-lastmile
-    # set :default_stage,   "uat"
+    #set :default_stage,   "uat"
 
     # enable default-disabled recipes
     #set :use_config_yaml, true
