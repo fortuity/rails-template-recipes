@@ -1,0 +1,100 @@
+h1. Rails-Template-Recipes
+
+This project is a fork of "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
+
+What's here is a collection of Ruby scripts ("recipes") that are used to customize the application templates that are created by the RailsWizard web app. "Rails Wizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application.
+
+h2. A Little More Explanation
+
+Rails has a command that looks like this:
+
+@$ rails new app_name -m /path/to/application-template.rb@
+
+which generates a new Rails application and customizes it according to a script defined in the *application-template.rb* file.
+
+You can create an *application-template.rb* file yourself or use one that someone else has written. Or you can visit "http://railswizard.org/":http://railswizard.org/, select various ingredients from a menu, and programmatically generate a new application template.
+
+Rails Wizard might not have all the ingredients or customizations you want for your Rails app. This is a collection of extra recipes that you can add to the Rails Wizard mix.
+
+h2. Usage Example
+
+Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/:
+
+<pre>
+git_repo = "https://github.com/fortuity/rails-template-recipes"
+@recipe_list = recipes ; def recipe_list; @recipe_list end
+extra_recipes = %w{ rvm git cleanup activerecord_extras
+  cucumber_extras rspec_extras autotest irb application.haml
+  flashes_partial.haml flashes_partial.erb
+  exclude_database_yaml rake_init_tasks capistrano_lastmile }
+extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
+</pre>
+
+Note that @extra_recipes@ is a list of filenames from this repository (without the *.rb* extension).
+
+h2. Dependencies
+
+Before generating a new Rails app using an application template, you will need:
+
+* The Ruby language (version 1.8.7 or 1.9.2)
+* Rails (version 3.0.4 or newer)
+
+bq. You MUST be using Rails 3.0.4 or newer. Generating a Rails application from an "HTTPS" URL does not work in Rails 3.0.3 and earlier versions.
+
+I recommend installing rvm, the "Ruby Version Manager":http://rvm.beginrescueend.com/, to manage multiple versions of Rails.
+
+If you are using rvm, you can see a list of the Ruby versions currently installed:
+@$ rvm list@
+
+Check that appropriate versions of Ruby and Rails are installed in your development environment:
+@$ ruby -v@
+@$ rails -v@
+
+h2. How It Works
+
+Rails generators can use any methods provided by the "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions module. The flexibility of mixing "recipes" for application templates comes from use of the @apply@ method from the Thor::Actions module. Given a web address or a local filepath, the "apply method":http://rdoc.info/github/wycats/thor/master/Thor/Actions#apply-instance_method loads and executes a file within the context of the generator script.
+
+h2. Writing Recipes
+
+You can clone this repository and customize these recipes or add new ones. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb.
+
+Please send a "pull request" if you've written recipes you'd like to contribute.
+
+h2. Documentation and Support
+
+This is the only documentation that's available.
+
+h3. Issues
+
+Any issues? Please create an "Issue":http://github.com/fortuity/rails-template-recipes/issues on GitHub.
+
+h3. About Rails Application Templates
+
+"Cooking Up A Custom Rails 3 Template (11 Oct 2010) by Andrea Singh":http://blog.madebydna.com/all/code/2010/10/11/cooking-up-a-custom-rails3-template.html
+"Rails Application Templates (16 Sept 2010) by Collin Schaafsma":http://quickleft.com/blog/rails-application-templates
+"Application templates in Rails 3 (18 Sept 2009) by Ben Scofield":http://benscofield.com/2009/09/application-templates-in-rails-3/
+"Railscasts: App Templates in Rails 2.3 (9 Feb 2009) by Ryan Bates":http://railscasts.com/episodes/148-app-templates-in-rails-2-3
+"Rails templates (4 Dec 2008) by Pratik Naik":http://m.onkey.org/rails-templates
+
+h2. Contributing
+
+If you make improvements to these templates, please share with others.
+
+* Fork the project on GitHub.
+* Make your feature addition or bug fix.
+* Commit with Git.
+* Send the author a pull request.
+
+If you start a project that is similar, please contact me and I'll add a note to the README so that others can find your work.
+
+h2. Credits
+
+Fletcher Nichol ("http://silversky.ca/":http://silversky.ca/) created the original "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes project.
+
+This project is a fork by Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) with additional recipes.
+
+h2. License
+
+h3. Public Domain Dedication
+
+This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
