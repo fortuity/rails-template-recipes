@@ -1,4 +1,4 @@
-if recipes.include? 'erb'
+if recipe_list.include? 'erb'
   say_recipe 'Flashes partial (ERb)'
 
   create_file 'app/views/shared/_flashes.html.erb' do

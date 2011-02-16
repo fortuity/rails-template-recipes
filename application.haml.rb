@@ -1,4 +1,4 @@
-if recipes.include? 'haml'
+if recipe_list.include? 'haml'
   say_recipe 'Application layout (Haml)'
 
   remove_file 'app/views/application.html.erb'

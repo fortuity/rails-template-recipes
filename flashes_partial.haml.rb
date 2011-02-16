@@ -1,4 +1,4 @@
-if recipes.include? 'haml'
+if recipe_list.include? 'haml'
   say_recipe 'Flashes partial (Haml)'
 
   create_file 'app/views/shared/_flashes.html.haml' do

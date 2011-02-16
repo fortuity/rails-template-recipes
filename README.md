@@ -4,6 +4,7 @@ Select the recipes you would like to include and add some like the following to 
 *Customize Template* section at <http://railswizard.org/>:
 
     git_repo = "https://github.com/fnichol/rails-template-recipes"
+    @recipe_list = recipes ; def recipe_list; @recipe_list end
     extra_recipes = %w{ rvm git cleanup activerecord_extras
       cucumber_extras rspec_extras autotest irb application.haml
       flashes_partial.haml flashes_partial.erb
