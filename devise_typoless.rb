@@ -32,4 +32,9 @@ after_bundler do
   
   generate 'devise user'
   
+  if recipe_list.include? 'git'
+    git :add => '.'
+    git :commit => "-aqm 'Added Devise for authentication'"
+  end
+  
 end
