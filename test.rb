@@ -6,9 +6,9 @@ if recipe_list.include? 'haml'
   say_wizard 'recipe list includes Haml'
 end
 
-if template
+if recipe_list.include? 'mongoid'
   
-  say_wizard "#{template.inspect}"
+  say_wizard "#{recipe_list.inspect}"
   
   # template.each do |k,v|
   # 
@@ -16,7 +16,7 @@ if template
   # 
   # end
 else
-  say_wizard "template is nil"
+  say_wizard "recipe_list doesn't include target"
 end
 
 say_wizard "test complete"
