@@ -21,13 +21,11 @@ h2. Usage Example
 Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/:
 
 <pre>
-git_repo = "https://github.com/fortuity/rails-template-recipes"
-@recipe_list = recipes ; def recipe_list; @recipe_list end
-extra_recipes = %w{ rvm git cleanup activerecord_extras
-  cucumber_extras rspec_extras autotest irb application.haml
-  flashes_partial.haml flashes_partial.erb
-  exclude_database_yaml rake_init_tasks capistrano_lastmile }
-extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
+  git_repo = "https://github.com/fortuity/rails-template-recipes"
+  @recipe_list = recipes ; def recipe_list; @recipe_list end
+  def extra_recipes; @extra_recipes end
+  @extra_recipes = %w{ git bson_ext devise_typoless }
+  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
 </pre>
 
 Note that @extra_recipes@ is a list of filenames from this repository (without the *.rb* extension).
