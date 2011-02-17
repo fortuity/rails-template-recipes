@@ -1,5 +1,6 @@
 # >--------------------------------[ bson_ext ]--------------------------------<
 
-say_recipe 'Add bson_ext gem for use with Mongoid'
+# Add bson_ext gem for use with Mongoid
+say_recipe 'bson_ext'
 
 gem 'bson_ext', '1.2.2'
