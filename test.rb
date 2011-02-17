@@ -6,6 +6,10 @@ if recipe_list.include? 'haml'
   say_wizard 'recipe list includes Haml'
 end
 
-say_wizard "template['orm'] is #{template['orm']}"
+template.each do |k,v|
+
+  say_wizard "#{k} is #{v}"
+
+end
 
 say_wizard "test complete"
