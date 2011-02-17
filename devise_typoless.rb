@@ -32,7 +32,7 @@ after_bundler do
   
   generate 'devise user'
   
-  if recipe_list.include? 'git'
+  if extra_recipes.include? 'git'
     say_wizard "commiting Devise updates to git"
     git :add => '.'
     git :commit => "-am 'Added Devise for authentication'"
