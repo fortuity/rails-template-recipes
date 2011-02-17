@@ -29,6 +29,12 @@ after_bundler do
   else
     # Nothing to do
   end
+ 
+  if recipe_list.include? 'haml'
+    # the following gems are used to generate Devise views for Haml
+    gem 'hpricot', :group => :development
+    gem 'ruby_parser', :group => :development
+  end
   
   generate 'devise user'
   
