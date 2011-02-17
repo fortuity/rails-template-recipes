@@ -7,11 +7,14 @@ if recipe_list.include? 'haml'
 end
 
 if template
-  template.each do |k,v|
-
-    say_wizard "#{k} is #{v}"
-
-  end
+  
+  say_wizard "#{template.inspect}"
+  
+  # template.each do |k,v|
+  # 
+  #   say_wizard "#{k} is #{v}"
+  # 
+  # end
 else
   say_wizard "template is nil"
 end
