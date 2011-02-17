@@ -1,28 +1,51 @@
-say_recipe 'git'
+# >--------------------------------[ Git ]---------------------------------<
 
+# Set up Git for version control
+say_recipe 'Git'
+
+# Git should ignore some files
 remove_file '.gitignore'
 file '.gitignore', <<-'IGNORES'.gsub(/^ {2}/, '')
   # bundler state
   /.bundle
   /vendor/bundle/
- 
-  # rails specific artifacts
-  /log/
-  /tmp/
+
+  # minimal Rails specific artifacts
+  db/*.sqlite3
+  /log/*
+  tmp/*
+
+  # various artifacts
+  **.war
+  *.rbc
+  *.sassc
+  .rspec
+  .sass-cache
+  /config/config.yml
+  /config/database.yml
+  /coverage.data
+  /coverage/
+  /db/*.javadb/
+  /db/*.sqlite3-journal
   /doc/api/
   /doc/app/
-  /config/database.yml
-  /config/config.yml
-  /db/*.sqlite3
-  /db/*.sqlite3-journal
-  /db/*.javadb/
-  /derby.log
-  **.war
-  /coverage/
-  /coverage.data
-  /public/system/
-  rerun.txt
-  capybara-*.html
+  /doc/features.html
+  /doc/specs.html
+  /log/*
+  /public/cache
+  /public/stylesheets/compiled
+  /public/system
+  /spec/tmp/*
+  /tmp/*
+  /cache
+  /capybara*
+  /capybara-*.html
+  /gems
+  /rerun.txt
+  /spec/requests
+  /spec/routing
+  /spec/views
+  /specifications
 
   # scm revert files
   **.orig
@@ -40,5 +63,7 @@ file '.gitignore', <<-'IGNORES'.gsub(/^ {2}/, '')
   **.swp
 IGNORES
 
+# Initialize new Git repo
 git :init
-
+git :add => '.'
+git :commit => "-aqm 'Initial commit of new Rails app'"
