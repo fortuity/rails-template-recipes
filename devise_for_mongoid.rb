@@ -1,6 +1,6 @@
-# >--------------------------------[ Devise ]---------------------------------<
+# >--------------------------------[ Devise for Mongoid ]---------------------------------<
 
-# Utilize Devise for authentication, automatically configured for your selected ORM.
+# Utilize Devise for authentication, configured for Mongoid.
 say_recipe 'Devise'
 
 gem 'devise'
