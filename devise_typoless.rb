@@ -23,7 +23,8 @@ after_bundler do
     gem 'mm-devise'
     gsub_file 'config/initializers/devise.rb', 'devise/orm/active_record', 'devise/orm/mongo_mapper_active_model'
   elsif recipe_list.include? 'mongoid'
-    gsub_file 'config/initializers/devise.rb', 'devise/orm/active_record', 'devise/orm/mongoid'
+    # Nothing to do (Devise changes its initializer automatically when Mongoid is detected)
+    # gsub_file 'config/initializers/devise.rb', 'devise/orm/active_record', 'devise/orm/mongoid'
   elsif recipe_list.include? 'active_record'
     # Nothing to do
   else
