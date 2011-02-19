@@ -29,7 +29,10 @@ after_bundler do
   else
     # Nothing to do
   end
- 
+
+  # prevent logging of password_confirmation 
+  gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
+
   if recipe_list.include? 'haml'
     # the following gems are used to generate Devise views for Haml
     gem 'hpricot', :group => :development
