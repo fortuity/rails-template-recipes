@@ -22,13 +22,13 @@ if recipe_list.include? 'devise' || extra_recipes.include? 'devise_extras'
     create_file 'app/views/home/index.html.haml' do 
   <<-'FILE'
   - @users.each do |user|
-    %p User: #{link_to user.name, user}
+    %p User: #{user.name}
   FILE
     end
   else
     append_file 'app/views/home/index.html.erb' do <<-FILE
   <% @users.each do |user| %>
-    <p>User: <%=link_to user.name, user %></p>
+    <p>User: <%= user.name %></p>
   <% end %>
     FILE
     end
