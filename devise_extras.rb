@@ -1,7 +1,9 @@
-# >--------------------------------[ Devise ]---------------------------------<
+# >--------------------------------[ devise_extras ]---------------------------------<
+
+# This recipe substitutes for the RailsWizard standard Devise recipe (which has an error as of 18 Feb 2011).
 
 # Utilize Devise for authentication, automatically configured for your selected ORM.
-say_recipe 'Devise'
+say_recipe 'Devise Extras'
 
 gem 'devise'
 
@@ -43,7 +45,7 @@ after_bundler do
   generate 'devise user'
   
   if extra_recipes.include? 'git'
-    say_wizard "commiting Devise updates to git"
+    say_wizard "commiting changes to git"
     git :add => '.'
     git :commit => "-am 'Added Devise for authentication'"
   end
