@@ -24,7 +24,7 @@ Add the following to the *Customize Template* section at "http://railswizard.org
   git_repo = "https://github.com/fortuity/rails-template-recipes"
   @recipe_list = recipes ; def recipe_list; @recipe_list end
   def extra_recipes; @extra_recipes end
-  @extra_recipes = %w{ git bson_ext devise_typoless }
+  @extra_recipes = %w{ git cleanup ban_spiders }
   @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
 </pre>
 
