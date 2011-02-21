@@ -23,9 +23,9 @@ after_bundler do
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/home/index.html.haml' do 
       <<-'FILE'
-      - @users.each do |user|
-      %p User: #{user.name}
-      FILE
+- @users.each do |user|
+  %p User: #{user.name}
+FILE
       end
     else
       append_file 'app/views/home/index.html.erb' do <<-FILE
