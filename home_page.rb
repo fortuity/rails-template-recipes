@@ -8,7 +8,7 @@ after_bundler do
   generate(:controller, "home index")
   gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
 
-  if (recipe_list.include? 'devise') || (extra_recipes.include? 'devise_extras')
+  if extra_recipes.include? 'devise_extras'
 
     # set up a simple demonstration of Devise (displaying a list of users)
     gsub_file 'app/controllers/home_controller.rb', /def index/ do
