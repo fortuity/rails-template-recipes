@@ -13,9 +13,9 @@ after_bundler do
     # set up a simple demonstration of Devise (displaying a list of users)
     gsub_file 'app/controllers/home_controller.rb', /def index/ do
     <<-RUBY
-    def index
-      @users = User.all
-    RUBY
+  def index
+    @users = User.all
+RUBY
     end
 
     if recipe_list.include? 'haml'
@@ -29,10 +29,10 @@ FILE
       end
     else
       append_file 'app/views/home/index.html.erb' do <<-FILE
-      <% @users.each do |user| %>
-      <p>User: <%= user.name %></p>
-      <% end %>
-      FILE
+<% @users.each do |user| %>
+  <p>User: <%= user.name %></p>
+<% end %>
+FILE
       end
     end
 
