@@ -7,12 +7,12 @@ after_bundler do
   if recipe_list.include? 'mongoid'
     gsub_file 'app/models/user.rb', /end/ do
     <<-RUBY
-      field :name
-      validates_presence_of :name
-      validates_uniqueness_of :name, :email, :case_sensitive => false
-      attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-    end
-    RUBY
+    field :name
+    validates_presence_of :name
+    validates_uniqueness_of :name, :email, :case_sensitive => false
+    attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  end
+  RUBY
     end
   end
 
