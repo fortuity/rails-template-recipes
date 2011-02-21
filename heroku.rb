@@ -5,7 +5,7 @@ say_recipe 'Heroku'
 # Add a Heroku gem to the Gemfile
 gem 'heroku', :group => :development
 
-# Add a Heroku gem to the Gemfile
+# Add a Heroku ignore file
 file ".slugignore", <<-EOS.gsub(/^  /, '')
   *.psd
   *.pdf
