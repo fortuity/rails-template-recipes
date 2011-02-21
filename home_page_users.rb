@@ -1,0 +1,43 @@
+# >--------------------------------[ home_page_users ]--------------------------------<
+
+say_recipe 'Home Page Users'
+
+after_bundler do
+
+  if extra_recipes.include? 'devise_extras'
+
+    # set up a simple demonstration of Devise (displaying a list of users)
+    gsub_file 'app/controllers/home_controller.rb', /def index/ do
+    <<-RUBY
+  def index
+    @users = User.all
+RUBY
+    end
+
+    if recipe_list.include? 'haml'
+      run 'rm app/views/home/index.html.haml'
+      # we have to use single-quote-style-heredoc to avoid interpolation
+      create_file 'app/views/home/index.html.haml' do 
+      <<-'FILE'
+- @users.each do |user|
+  %p User: #{user.name}
+FILE
+      end
+    else
+      append_file 'app/views/home/index.html.erb' do <<-FILE
+<% @users.each do |user| %>
+  <p>User: <%= user.name %></p>
+<% end %>
+FILE
+      end
+    end
+
+  end
+
+  if extra_recipes.include? 'git'
+    say_wizard "commiting changes to git"
+    git :add => '.'
+    git :commit => "-am 'Added display of users to the home page.'"
+  end
+
+end
