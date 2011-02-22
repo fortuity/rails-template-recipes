@@ -4,6 +4,20 @@ This project is a fork of "fnichol/rails-template-recipes":https://github.com/fn
 
 What's here is a collection of Ruby scripts ("recipes") that are used to customize the application templates that are created by the RailsWizard web app. "Rails Wizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application.
 
+h4. Related Projects
+
+Here's a tutorial that shows how an example application is built from a combination of recipes:
+
+* "Tutorial for rails3-mongoid-devise":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29
+
+Here are finished application templates that are assembled from recipes:
+
+* "rails3-application-templates":https://github.com/fortuity/rails3-application-templates
+
+You can see an example application that was created from the recipes:
+
+* "rails3-mongoid-devise":http://github.com/fortuity/rails3-mongoid-devise/
+
 h2. A Little More Explanation
 
 Rails has a command that looks like this:
