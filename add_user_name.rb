@@ -25,6 +25,12 @@ after_bundler do
   end
 RUBY
     end
+  elsif recipe_list.include? 'mongo_mapper'
+    # Suggest some code, create an issue, and I'll add it
+  elsif recipe_list.include? 'active_record'
+    # Suggest some code, create an issue, and I'll add it
+  else
+    # Placeholder for some other ORM
   end
 
   if extra_recipes.include? 'devise_extras'
@@ -76,6 +82,11 @@ ERB
   if extra_recipes.include? 'git'
     say_wizard "commiting changes to git"
     git :add => '.'
-    git :commit => "-am 'Add a name attribute to the User model and modify Devise views.'"
+    if extra_recipes.include? 'devise_extras'
+      git :commit => "-am 'Add a name attribute to the User model and modify Devise views.'"
+    else
+      git :commit => "-am 'Add a name attribute to the User model.'"
+    end
   end
+
 end
