@@ -12,7 +12,7 @@ after_bundler do
 
   if extra_recipes.include? 'devise_extras'
 
-    # set up a simple demonstration of Devise (displaying a list of users)
+    # set up a simple home page (displaying a list of users)
     gsub_file 'app/controllers/home_controller.rb', /def index/ do
     <<-RUBY
   def index
