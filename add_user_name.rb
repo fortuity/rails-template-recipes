@@ -26,9 +26,16 @@ after_bundler do
 RUBY
     end
   elsif recipe_list.include? 'mongo_mapper'
-    # Suggest some code, create an issue, and I'll add it
+    # Using MongoMapper? Create an issue, suggest some code, and I'll add it
   elsif recipe_list.include? 'active_record'
-    # Suggest some code, create an issue, and I'll add it
+    gsub_file 'app/models/user.rb', /end/ do
+    <<-RUBY
+    validates_presence_of :name
+    validates_uniqueness_of :name, :email, :case_sensitive => false
+    attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  end
+RUBY
+    end
   else
     # Placeholder for some other ORM
   end
