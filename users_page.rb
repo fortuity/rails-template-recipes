@@ -9,7 +9,7 @@ after_bundler do
   if extra_recipes.include? 'devise_extras'
 
     #----------------------------------------------------------------------------
-    # Create a users controller and show page
+    # Create a users controller
     #----------------------------------------------------------------------------
     generate(:controller, "users show")
     # @devise_for :users@ route must be placed above @resources :users, :only => :show@.
@@ -30,6 +30,9 @@ before_filter :authenticate_user!
 RUBY
     end
 
+    #----------------------------------------------------------------------------
+    # Create a users show page
+    #----------------------------------------------------------------------------
     if recipe_list.include? 'haml'
       run 'rm app/views/users/show.html.haml'
       # we have to use single-quote-style-heredoc to avoid interpolation
@@ -45,6 +48,16 @@ ERB
       end
     end
 
+    #----------------------------------------------------------------------------
+    # Add links on home page for user show page
+    #----------------------------------------------------------------------------
+
+
+
+
+    #----------------------------------------------------------------------------
+    # Create navigation links for Devise
+    #----------------------------------------------------------------------------
     if recipe_list.include? 'haml'
       create_file "app/views/devise/menu/_login_items.html.haml" do <<-'HAML'
 - if user_signed_in?
@@ -100,7 +113,7 @@ ERB
   if extra_recipes.include? 'git'
     say_wizard "commiting changes to git"
     git :add => '.'
-    git :commit => "-am 'Added a users controller and show page.'"
+    git :commit => "-am 'Add a users controller, user show page, and navigation links.'"
   end
 
 end
