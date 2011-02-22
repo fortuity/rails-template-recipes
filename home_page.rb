@@ -25,12 +25,15 @@ RUBY
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/home/index.html.haml' do 
       <<-'HAML'
+%h3 Home
 - @users.each do |user|
   %p User: #{user.name}
 HAML
       end
     else
-      append_file 'app/views/home/index.html.erb' do <<-ERB
+      run 'rm app/views/home/index.html.erb'
+      create_file 'app/views/home/index.html.erb' do <<-ERB
+<h3>Home</h3>
 <% @users.each do |user| %>
   <p>User: <%= user.name %></p>
 <% end %>

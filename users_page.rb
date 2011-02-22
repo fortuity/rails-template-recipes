@@ -50,10 +50,36 @@ ERB
 
     #----------------------------------------------------------------------------
     # Add links on home page for user show page
+    # (clobbers code from the home_page recipe)
     #----------------------------------------------------------------------------
+    # this could add a duplicate line but so what? belts and suspenders
+    gsub_file 'app/controllers/home_controller.rb', /def index/ do
+    <<-RUBY
+  def index
+    @users = User.all
+RUBY
+    end
 
-
-
+    if recipe_list.include? 'haml'
+      run 'rm app/views/home/index.html.haml'
+      # we have to use single-quote-style-heredoc to avoid interpolation
+      create_file 'app/views/home/index.html.haml' do 
+      <<-'HAML'
+%h3 Home
+- @users.each do |user|
+  %p User: #{user.name}
+HAML
+      end
+    else
+      run 'rm app/views/home/index.html.erb'
+      create_file 'app/views/home/index.html.erb' do <<-ERB
+<h3>Home</h3>
+<% @users.each do |user| %>
+  <p>User: <%= user.name %></p>
+<% end %>
+ERB
+      end
+    end
 
     #----------------------------------------------------------------------------
     # Create navigation links for Devise
