@@ -7,7 +7,14 @@ say_recipe 'Devise Extras'
 
 gem 'devise'
 
+if recipe_list.include? 'haml'
+  # the following gems are used to generate Devise views for Haml
+  gem 'hpricot', :group => :development
+  gem 'ruby_parser', :group => :development
+end
+
 after_bundler do
+
   generate 'devise:install'
 
   if recipe_list.include? 'mongo_mapper'
@@ -25,18 +32,12 @@ after_bundler do
   # prevent logging of password_confirmation 
   gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 
-  if recipe_list.include? 'haml'
-    # the following gems are used to generate Devise views for Haml
-    gem 'hpricot', :group => :development
-    gem 'ruby_parser', :group => :development
-  end
-  
   generate 'devise user'
-  
+
   if extra_recipes.include? 'git'
     say_wizard "commiting changes to git"
     git :add => '.'
     git :commit => "-am 'Added Devise for authentication'"
   end
-  
+
 end
