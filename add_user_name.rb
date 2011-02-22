@@ -27,48 +27,50 @@ RUBY
     end
   end
 
-  #----------------------------------------------------------------------------
-  # Generate Devise views
-  #----------------------------------------------------------------------------
-  run 'rails generate devise:views'
+  if extra_recipes.include? 'devise_extras'
+    #----------------------------------------------------------------------------
+    # Generate Devise views
+    #----------------------------------------------------------------------------
+    run 'rails generate devise:views'
 
-  #----------------------------------------------------------------------------
-  # Modify Devise views to add 'name'
-  #----------------------------------------------------------------------------
-  if haml_flag
-     inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
+    #----------------------------------------------------------------------------
+    # Modify Devise views to add 'name'
+    #----------------------------------------------------------------------------
+    if haml_flag
+       inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
   <<-HAML
   %p
     = f.label :name
     %br/
     = f.text_field :name
 HAML
-     end
-  else
-     inject_into_file "app/views/devise/registrations/edit.html.erb", :after => "<%= devise_error_messages! %>\n" do
+       end
+    else
+       inject_into_file "app/views/devise/registrations/edit.html.erb", :after => "<%= devise_error_messages! %>\n" do
   <<-ERB
   <p><%= f.label :name %><br />
   <%= f.text_field :name %></p>
 ERB
-     end
-  end
+       end
+    end
 
-  if haml_flag
-     inject_into_file "app/views/devise/registrations/new.html.haml", :after => "= devise_error_messages!\n" do
+    if haml_flag
+       inject_into_file "app/views/devise/registrations/new.html.haml", :after => "= devise_error_messages!\n" do
   <<-HAML
   %p
     = f.label :name
     %br/
     = f.text_field :name
 HAML
-     end
-  else
-     inject_into_file "app/views/devise/registrations/new.html.erb", :after => "<%= devise_error_messages! %>\n" do
+       end
+    else
+       inject_into_file "app/views/devise/registrations/new.html.erb", :after => "<%= devise_error_messages! %>\n" do
   <<-ERB
   <p><%= f.label :name %><br />
   <%= f.text_field :name %></p>
 ERB
-     end
+       end
+    end
   end
 
   if extra_recipes.include? 'git'
