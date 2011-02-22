@@ -15,6 +15,9 @@ end
 
 after_bundler do
 
+  #----------------------------------------------------------------------------
+  # Run the Devise generator
+  #----------------------------------------------------------------------------
   generate 'devise:install'
 
   if recipe_list.include? 'mongo_mapper'
@@ -29,9 +32,14 @@ after_bundler do
     # Nothing to do
   end
 
-  # prevent logging of password_confirmation 
+  #----------------------------------------------------------------------------
+  # Prevent logging of password_confirmation
+  #----------------------------------------------------------------------------
   gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 
+  #----------------------------------------------------------------------------
+  # Generate models and routes for a User
+  #----------------------------------------------------------------------------
   generate 'devise user'
 
   if extra_recipes.include? 'git'
