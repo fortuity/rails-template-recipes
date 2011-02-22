@@ -1,5 +1,7 @@
 # >--------------------------------[ home_page ]--------------------------------<
 
+# There is Haml code in this script. Changing the indentation is perilous between HAMLs.
+
 say_recipe 'Home Page'
 
 after_bundler do
@@ -22,17 +24,17 @@ RUBY
       run 'rm app/views/home/index.html.haml'
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/home/index.html.haml' do 
-      <<-'FILE'
+      <<-'HAML'
 - @users.each do |user|
   %p User: #{user.name}
-FILE
+HAML
       end
     else
-      append_file 'app/views/home/index.html.erb' do <<-FILE
+      append_file 'app/views/home/index.html.erb' do <<-ERB
 <% @users.each do |user| %>
   <p>User: <%= user.name %></p>
 <% end %>
-FILE
+ERB
       end
     end
 

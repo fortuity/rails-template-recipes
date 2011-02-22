@@ -1,6 +1,6 @@
 # >--------------------------------[ users_page ]--------------------------------<
 
-# There be Haml code in this script. Changing the indentation is perilous between HAMLs.
+# There is Haml code in this script. Changing the indentation is perilous between HAMLs.
 
 say_recipe 'Users Page'
 
