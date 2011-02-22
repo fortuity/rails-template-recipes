@@ -9,5 +9,5 @@ after_bundler do
   gsub_file "config/application.rb", /config.action_view.javascript_expansions[:defaults] = \%w()/, ""
   # a little test
   gsub_file "config/application.rb", /# Configure/, "# (test) Configure"
-  # gsub_file "config/application.rb", /config.action_view.javascript/, "foobar"
+  gsub_file "config/application.rb", /config.action_view.javascript_expansions[:defaults] = /, "foobar"
 end
