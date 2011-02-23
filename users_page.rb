@@ -16,8 +16,8 @@ after_bundler do
     <<-RUBY
 before_filter :authenticate_user!
 
-def show
-  @user = User.find(params[:id])
+  def show
+    @user = User.find(params[:id])
 RUBY
     end
 
