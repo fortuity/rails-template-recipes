@@ -37,7 +37,7 @@ RUBY
     # Create a users show page
     #----------------------------------------------------------------------------
     if recipe_list.include? 'haml'
-      run 'rm app/views/users/show.html.haml'
+      remove_file 'app/views/users/show.html.haml'
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/users/show.html.haml' do <<-'HAML'
 %p
@@ -56,7 +56,7 @@ ERB
     # (clobbers code from the home_page_users recipe)
     #----------------------------------------------------------------------------
     # set up the controller
-    run 'rm app/controllers/home_controller.rb'
+    remove_file 'app/controllers/home_controller.rb'
     create_file 'app/controllers/home_controller.rb' do
     <<-RUBY
 class HomeController < ApplicationController
@@ -69,7 +69,7 @@ RUBY
 
     # modify the home page
     if recipe_list.include? 'haml'
-      run 'rm app/views/home/index.html.haml'
+      remove_file 'app/views/home/index.html.haml'
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/home/index.html.haml' do
       <<-'HAML'
@@ -79,7 +79,7 @@ RUBY
 HAML
       end
     else
-      run 'rm app/views/home/index.html.erb'
+      remove_file 'app/views/home/index.html.erb'
       create_file 'app/views/home/index.html.erb' do <<-ERB
 <h3>Home</h3>
 <% @users.each do |user| %>

@@ -10,7 +10,7 @@ after_bundler do
   # Set up the default application layout
   #----------------------------------------------------------------------------
   if recipe_list.include? 'haml'
-    run 'rm app/views/layouts/application.html.erb'
+    remove_file 'app/views/layouts/application.html.erb'
     create_file 'app/views/layouts/application.html.haml' do <<-HAML
 !!!
 %html

@@ -22,7 +22,7 @@ RUBY
     # Replace the home page
     #----------------------------------------------------------------------------
     if recipe_list.include? 'haml'
-      run 'rm app/views/home/index.html.haml'
+      remove_file 'app/views/home/index.html.haml'
       # we have to use single-quote-style-heredoc to avoid interpolation
       create_file 'app/views/home/index.html.haml' do 
       <<-'HAML'
