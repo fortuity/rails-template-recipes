@@ -21,7 +21,7 @@ after_bundler do
     = csrf_meta_tag
   %body
     - flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+      = content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String)
     = yield
 HAML
     end
@@ -29,7 +29,7 @@ HAML
     inject_into_file 'app/views/layouts/application.html.erb', :after => "<body>\n" do
   <<-ERB
   <%- flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <%= content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String) %>
   <%- end -%>
 ERB
     end
