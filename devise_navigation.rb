@@ -65,7 +65,7 @@ ERB
     # Add navigation links to the default application layout
     #----------------------------------------------------------------------------
     if recipe_list.include? 'haml'
-      inject_into_file 'app/views/layouts/application.html.erb', :after => "%body\n" do <<-HAML
+      inject_into_file 'app/views/layouts/application.html.haml', :after => "%body\n" do <<-HAML
   %ul.hmenu
     = render 'devise/menu/registration_items'
     = render 'devise/menu/login_items'
