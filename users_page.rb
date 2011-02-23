@@ -14,12 +14,12 @@ after_bundler do
     generate(:controller, "users show")
     gsub_file 'app/controllers/users_controller.rb', /def show/ do
     <<-RUBY
-    before_filter :authenticate_user!
+before_filter :authenticate_user!
 
-      def show
-        @user = User.find(params[:id])
-    RUBY
-        end
+def show
+  @user = User.find(params[:id])
+RUBY
+    end
 
     #----------------------------------------------------------------------------
     # Modify the routes
