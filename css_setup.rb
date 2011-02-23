@@ -16,11 +16,17 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
-.notice {
-  color: green;
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
 }
-.alert {
-  color: red;  
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
 }
 CSS
   end
