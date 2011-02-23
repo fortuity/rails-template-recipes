@@ -49,7 +49,7 @@ RUBY
     #----------------------------------------------------------------------------
     # Modify Devise views to add 'name'
     #----------------------------------------------------------------------------
-    if haml_flag
+    if recipe_list.include? 'haml'
        inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
   <<-HAML
   %p
@@ -67,7 +67,7 @@ ERB
        end
     end
 
-    if haml_flag
+    if recipe_list.include? 'haml'
        inject_into_file "app/views/devise/registrations/new.html.haml", :after => "= devise_error_messages!\n" do
   <<-HAML
   %p
