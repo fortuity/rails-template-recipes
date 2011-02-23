@@ -1,5 +1,8 @@
 # >--------------------------------[ bson_ext ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/bson_ext.rb
+
 if recipe_list.include? 'mongoid'
   
   # Add bson_ext gem for use with Mongoid

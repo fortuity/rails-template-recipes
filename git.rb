@@ -1,4 +1,7 @@
-# >--------------------------------[ Git ]---------------------------------<
+# >--------------------------------[ git ]---------------------------------<
+
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/git.rb
 
 # Set up Git for version control
 say_recipe 'Git'

@@ -1,5 +1,8 @@
 # >--------------------------------[ seed_database ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/seed_database.rb
+
 say_recipe 'Seed Database'
 
 after_bundler do

@@ -1,5 +1,8 @@
 # >--------------------------------[ css_setup ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/css_setup.rb
+
 say_recipe 'CSS Setup'
 
 after_bundler do

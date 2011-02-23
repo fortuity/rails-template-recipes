@@ -1,6 +1,7 @@
 # >--------------------------------[ gem_updates ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/gem_updates.rb
+
 say_recipe 'Gem Updates'
 
-gsub_file 'Gemfile', /"mongoid", ">= 2.0.0.beta.19"/, '"mongoid", ">= 2.0.0.rc.7"'
-gsub_file 'Gemfile', /"devise"/, '"devise", ">= 1.2.rc"'

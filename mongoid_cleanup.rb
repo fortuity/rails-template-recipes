@@ -1,8 +1,14 @@
 # >--------------------------------[ mongoid_cleanup ]--------------------------------<
 
-say_recipe 'Mongoid cleanup'
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/mongoid_cleanup.rb
+
+say_recipe 'Mongoid Cleanup'
 
 if recipe_list.include? 'mongoid'
+
+  # update to a newer Mongoid version
+  gsub_file 'Gemfile', /"mongoid", ">= 2.0.0.beta.19"/, '"mongoid", ">= 2.0.0.rc.7"'
 
   # modifying 'config/application.rb' file to remove ActiveRecord dependency
   gsub_file 'config/application.rb', /require 'rails\/all'/ do

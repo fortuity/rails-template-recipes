@@ -1,11 +1,14 @@
 # >--------------------------------[ devise_extras ]---------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/devise_extras.rb
+
 # This recipe substitutes for the RailsWizard standard Devise recipe (which has an error as of 18 Feb 2011).
 
 # Utilize Devise for authentication, automatically configured for your selected ORM.
 say_recipe 'Devise Extras'
 
-gem 'devise'
+gem "devise", ">= 1.2.rc"
 
 after_bundler do
 

@@ -1,5 +1,8 @@
 # >--------------------------------[ home_page_users ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/home_page_users.rb
+
 # There is Haml code in this script. Changing the indentation is perilous between HAMLs.
 
 say_recipe 'Home Page Showing Users'

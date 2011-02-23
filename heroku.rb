@@ -1,4 +1,7 @@
-# >--------------------------------[ Heroku ]--------------------------------<
+# >--------------------------------[ heroku ]--------------------------------<
+
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/heroku.rb
 
 say_recipe 'Heroku'
 

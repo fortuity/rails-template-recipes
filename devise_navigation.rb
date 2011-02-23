@@ -1,5 +1,8 @@
 # >--------------------------------[ devise_navigation ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/devise_navigation.rb
+
 # There is Haml code in this script. Changing the indentation is perilous between HAMLs.
 
 say_recipe 'Devise Navigation'

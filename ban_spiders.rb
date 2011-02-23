@@ -1,5 +1,8 @@
 # >--------------------------------[ ban_spiders ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/ban_spiders.rb
+
 say_recipe 'ban spiders'
 
 # ban spiders from your site by changing robots.txt

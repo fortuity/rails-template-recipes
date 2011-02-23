@@ -1,5 +1,8 @@
 # >--------------------------------[ cleanup ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/cleanup.rb
+
 say_recipe 'cleanup'
 
 # remove unnecessary files
@@ -7,7 +10,6 @@ say_recipe 'cleanup'
   README
   doc/README_FOR_APP
   public/index.html
-  public/favicon.ico
   public/images/rails.png
 }.each { |file| remove_file file }
 

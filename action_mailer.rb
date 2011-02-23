@@ -1,5 +1,8 @@
 # >--------------------------------[ action_mailer ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/action_mailer.rb
+
 say_recipe 'ActionMailer configuration'
 
 # modifying environment configuration files for ActiveRecord

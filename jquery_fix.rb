@@ -1,5 +1,8 @@
 # >--------------------------------[ jquery_fix ]--------------------------------<
 
+# Application template recipe. Check for a newer version here:
+# https://github.com/fortuity/rails-template-recipes/blob/master/jquery_fix.rb
+
 say_recipe 'jQuery Fix'
 
 # see https://github.com/intridea/rails_wizard/issues#issue/27
