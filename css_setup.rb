@@ -16,10 +16,10 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
-p.notice {
+.notice {
   color: green;
 }
-p.alert {
+.alert {
   color: red;  
 }
 CSS
