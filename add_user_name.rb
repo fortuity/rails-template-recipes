@@ -17,23 +17,23 @@ after_bundler do
   #----------------------------------------------------------------------------
   if recipe_list.include? 'mongoid'
     gsub_file 'app/models/user.rb', /end/ do
-    <<-RUBY
-    field :name
-    validates_presence_of :name
-    validates_uniqueness_of :name, :email, :case_sensitive => false
-    attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  end
+  <<-RUBY
+  field :name
+  validates_presence_of :name
+  validates_uniqueness_of :name, :email, :case_sensitive => false
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+end
 RUBY
     end
   elsif recipe_list.include? 'mongo_mapper'
     # Using MongoMapper? Create an issue, suggest some code, and I'll add it
   elsif recipe_list.include? 'active_record'
     gsub_file 'app/models/user.rb', /end/ do
-    <<-RUBY
-    validates_presence_of :name
-    validates_uniqueness_of :name, :email, :case_sensitive => false
-    attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  end
+  <<-RUBY
+  validates_presence_of :name
+  validates_uniqueness_of :name, :email, :case_sensitive => false
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+end
 RUBY
     end
   else
