@@ -72,7 +72,7 @@ This is the only documentation.
 
 h4. Writing Recipes
 
-To understand the code in these templates, take a look at "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb.
+To understand the code in these templates, take a look at "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://railsapi.com/doc/rails-v3.0.3/classes/Rails/Generators/Actions.html.
 
 Please send a message (via GitHub) or a "pull request" if you've written recipes you'd like to contribute.
 
