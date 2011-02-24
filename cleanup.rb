@@ -16,8 +16,8 @@ say_recipe 'cleanup'
 # add placeholder READMEs
 get "https://github.com/fortuity/rails-template-recipes/raw/master/sample_readme.txt", "README"
 get "https://github.com/fortuity/rails-template-recipes/raw/master/sample_readme.textile", "README.textile"
-gsub_file "README", /App_Name/, "#{app_name}"
-gsub_file "README.textile", /App_Name/, "#{app_name}"
+gsub_file "README", /App_Name/, "#{app_name}.humanize.titleize"
+gsub_file "README.textile", /App_Name/, "#{app_name}.humanize.titleize"
 
 # remove commented lines from Gemfile
 # thanks to https://github.com/perfectline/template-bucket/blob/master/cleanup.rb
