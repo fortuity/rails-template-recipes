@@ -66,27 +66,27 @@ h2. How It Works
 
 Rails generators can use any methods provided by the "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions module. The flexibility of mixing "recipes" for application templates comes from use of the @apply@ method from the Thor::Actions module. Given a web address or a local filepath, the "apply method":http://rdoc.info/github/wycats/thor/master/Thor/Actions#apply-instance_method loads and executes a file within the context of the generator script.
 
-h2. Writing Recipes
-
-You can clone this repository and customize these recipes or add new ones. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb.
-
-Please send a "pull request" if you've written recipes you'd like to contribute.
-
 h2. Documentation and Support
 
-This is the only documentation that's available.
+This is the only documentation.
 
-h3. Issues
+h4. Writing Recipes
 
-Any issues? Please create an "Issue":http://github.com/fortuity/rails-template-recipes/issues on GitHub.
+To understand the code in these templates, take a look at "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb.
 
-h3. About Rails Application Templates
+Please send a message (via GitHub) or a "pull request" if you've written recipes you'd like to contribute.
+
+h4. About Rails Application Templates
 
 "Cooking Up A Custom Rails 3 Template (11 Oct 2010) by Andrea Singh":http://blog.madebydna.com/all/code/2010/10/11/cooking-up-a-custom-rails3-template.html
 "Rails Application Templates (16 Sept 2010) by Collin Schaafsma":http://quickleft.com/blog/rails-application-templates
 "Application templates in Rails 3 (18 Sept 2009) by Ben Scofield":http://benscofield.com/2009/09/application-templates-in-rails-3/
 "Railscasts: App Templates in Rails 2.3 (9 Feb 2009) by Ryan Bates":http://railscasts.com/episodes/148-app-templates-in-rails-2-3
 "Rails templates (4 Dec 2008) by Pratik Naik":http://m.onkey.org/rails-templates
+
+h4. Issues
+
+Any issues? Please create an "Issue":http://github.com/fortuity/rails3-application-templates/issues on GitHub.
 
 h2. Contributing
 
@@ -105,8 +105,12 @@ Fletcher Nichol ("http://silversky.ca/":http://silversky.ca/) created the origin
 
 This project is a fork by Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) with additional recipes.
 
+Are the templates useful to you? Follow me on Twitter:
+"http://twitter.com/yaxdotcom":http://twitter.com/yaxdotcom
+and tweet some praise. I'd love to know you were helped out by what I've put together.
+
 h2. License
 
-h3. Public Domain Dedication
+h4. Public Domain Dedication
 
 This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
