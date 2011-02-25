@@ -1,8 +1,8 @@
 h1. Rails-Template-Recipes
 
-This project is a fork of "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
-
 What's here is a collection of Ruby scripts ("recipes") that are used to customize the application templates that are created by the RailsWizard web app. "Rails Wizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application.
+
+This project was inspired by "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
 
 h4. Related Projects
 
@@ -101,13 +101,15 @@ If you start a project that is similar, please contact me and I'll add a note to
 
 h2. Credits
 
-Fletcher Nichol ("http://silversky.ca/":http://silversky.ca/) created the original "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes project.
-
-This project is a fork by Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) with additional recipes.
-
 Are the templates useful to you? Follow me on Twitter:
 "http://twitter.com/yaxdotcom":http://twitter.com/yaxdotcom
 and tweet some praise. I'd love to know you were helped out by what I've put together.
+
+This project was inspired by "Fletcher Nichol's":http://silversky.ca/ "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
+
+Template recipes by Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) (some based on recipes by Fletcher Nichol).
+
+Additional recipes contributed by "Ramon Brooker":http://cogniton-mind.tumblr.com/ (RSpec, Cucumber, Yard).
 
 h2. License
 
