@@ -9,7 +9,7 @@ say_recipe 'Devise Navigation'
 
 after_bundler do
 
-  if extra_recipes.include? 'devise_extras'
+  if extra_recipes.include? 'devise'
 
     #----------------------------------------------------------------------------
     # Create navigation links for Devise

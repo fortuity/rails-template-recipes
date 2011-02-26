@@ -7,7 +7,7 @@ say_recipe 'Seed Database'
 
 after_bundler do
   
-  if extra_recipes.include? 'devise_extras'
+  if extra_recipes.include? 'devise'
   
     if recipe_list.include? 'mongoid'
       # create a default user

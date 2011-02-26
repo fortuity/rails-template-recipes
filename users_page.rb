@@ -9,7 +9,7 @@ say_recipe 'Users Page'
 
 after_bundler do
 
-  if extra_recipes.include? 'devise_extras'
+  if extra_recipes.include? 'devise'
 
     #----------------------------------------------------------------------------
     # Create a users controller

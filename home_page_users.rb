@@ -9,7 +9,7 @@ say_recipe 'Home Page Showing Users'
 
 after_bundler do
 
-  if extra_recipes.include? 'devise_extras'
+  if extra_recipes.include? 'devise'
 
     #----------------------------------------------------------------------------
     # Modify the home controller

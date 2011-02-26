@@ -80,7 +80,7 @@ h2. Recipes for Mongoid
 h2. Recipes to Fix RailsWizard 
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| "devise_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/devise_extras.rb          | Replacement for the RailsWizard standard Devise recipe | none | dkehoe |
+| "devise.rb":https://github.com/fortuity/rails-template-recipes/blob/master/devise.rb          | Replacement for the RailsWizard standard Devise recipe | none | dkehoe |
 | "jquery_fix.rb":https://github.com/fortuity/rails-template-recipes/blob/master/jquery_fix.rb             | Repairs an error in the RailsWizard jQuery recipe | jQuery | dkehoe |
 
 h2. Recipes for Deployment

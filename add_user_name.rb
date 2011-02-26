@@ -43,7 +43,7 @@ RUBY
     # Placeholder for some other ORM
   end
 
-  if extra_recipes.include? 'devise_extras'
+  if extra_recipes.include? 'devise'
     #----------------------------------------------------------------------------
     # Generate Devise views
     #----------------------------------------------------------------------------
@@ -92,7 +92,7 @@ ERB
   if extra_recipes.include? 'git'
     say_wizard "commiting changes to git"
     git :add => '.'
-    if extra_recipes.include? 'devise_extras'
+    if extra_recipes.include? 'devise'
       git :commit => "-am 'Add a name attribute to the User model and modify Devise views.'"
     else
       git :commit => "-am 'Add a name attribute to the User model.'"
