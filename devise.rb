@@ -1,9 +1,10 @@
-# >--------------------------------[ devise ]---------------------------------<
+# >--------------------------------[ Devise ]---------------------------------<
 
 # Application template recipe. Check for a newer version here:
 # https://github.com/fortuity/rails-template-recipes/blob/master/devise.rb
 
-# This recipe replaces the RailsWizard standard Devise recipe (which has an error as of 18 Feb 2011).
+# This recipe replaces the RailsWizard standard Devise recipe which has an error as of 18 Feb 2011:
+# https://github.com/intridea/rails_wizard/issues#issue/13
 
 # Utilize Devise for authentication, automatically configured for your selected ORM.
 say_recipe 'Devise'
@@ -35,7 +36,7 @@ after_bundler do
   gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "devise_installation"
     git :add => '.'
     git :commit => "-am 'Added Devise for authentication.'"
   end
@@ -46,7 +47,7 @@ after_bundler do
   generate 'devise user'
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "devise_user"
     git :add => '.'
     git :commit => "-am 'Devise generated models and routes for a User.'"
   end

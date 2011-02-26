@@ -27,7 +27,7 @@ FILE
   end
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "database_seed"
     git :add => '.'
     git :commit => "-am 'Create a database seed file with a default user.'"
   end

@@ -32,7 +32,7 @@ RUBY
 end
 
 if extra_recipes.include? 'git'
-  say_wizard "commiting changes to git"
+  git :tag => "ActionMailer_config"
   git :add => '.'
   git :commit => "-am 'Set ActionMailer configuration.'"
 end

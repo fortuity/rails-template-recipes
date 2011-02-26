@@ -11,7 +11,7 @@ gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
 gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
 
 if extra_recipes.include? 'git'
-  say_wizard "commiting changes to git"
+  git :tag => "ban_spiders"
   git :add => '.'
   git :commit => "-am 'Ban spiders from the site by changing robots.txt'"
 end

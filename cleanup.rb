@@ -25,7 +25,7 @@ gsub_file "Gemfile", /#.*\n/, "\n"
 gsub_file "Gemfile", /\n+/, "\n"
 
 if extra_recipes.include? 'git'
-  say_wizard "commiting deletes of unneeded files to git"
+  git :tag => "file_cleanup"
   git :add => '.'
   git :commit => "-am 'Removed unnecessary files left over from initial app generation.'"
 end

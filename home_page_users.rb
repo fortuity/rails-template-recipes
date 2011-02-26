@@ -47,7 +47,7 @@ ERB
   end
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "home_page_with_users"
     git :add => '.'
     git :commit => "-am 'Added display of users to the home page.'"
   end

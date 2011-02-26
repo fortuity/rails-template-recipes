@@ -36,7 +36,7 @@ ERB
   gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "home_page"
     git :add => '.'
     git :commit => "-am 'Create a home controller and view.'"
   end

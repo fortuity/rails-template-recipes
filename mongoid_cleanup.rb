@@ -24,7 +24,7 @@ if recipe_list.include? 'mongoid'
   remove_file 'config/database.yml'
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "mongoid_cleanup"
     git :add => '.'
     git :commit => "-am 'Fix config/application.rb file to remove ActiveRecord dependency.'"
   end

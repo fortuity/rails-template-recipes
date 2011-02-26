@@ -86,7 +86,7 @@ ERB
     end
 
     if extra_recipes.include? 'git'
-      say_wizard "commiting changes to git"
+      git :tag => "devise_navlinks"
       git :add => '.'
       git :commit => "-am 'Add navigation links for Devise.'"
     end

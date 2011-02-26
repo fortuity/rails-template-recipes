@@ -95,7 +95,7 @@ ERB
   end
 
   if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
+    git :tag => "users_page"
     git :add => '.'
     git :commit => "-am 'Add a users controller and user show page with links from the home page.'"
   end

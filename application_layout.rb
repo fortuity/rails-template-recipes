@@ -38,4 +38,10 @@ ERB
     end
   end
 
+  if extra_recipes.include? 'git'
+    git :tag => "app_layout"
+    git :add => '.'
+    git :commit => "-am 'Add application layout.'"
+  end
+  
 end

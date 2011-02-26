@@ -43,6 +43,12 @@ RUBY
     # Placeholder for some other ORM
   end
 
+  if extra_recipes.include? 'git'
+    git :tag => "add_user_name"
+    git :add => '.'
+    git :commit => "-am 'Add a name attribute to the User model.'"
+  end
+
   if extra_recipes.include? 'devise'
     #----------------------------------------------------------------------------
     # Generate Devise views
@@ -87,16 +93,13 @@ HAML
 ERB
        end
     end
-  end
 
-  if extra_recipes.include? 'git'
-    say_wizard "commiting changes to git"
-    git :add => '.'
-    if extra_recipes.include? 'devise'
-      git :commit => "-am 'Add a name attribute to the User model and modify Devise views.'"
-    else
-      git :commit => "-am 'Add a name attribute to the User model.'"
+    if extra_recipes.include? 'git'
+      git :tag => "devise_views"
+      git :add => '.'
+      git :commit => "-am 'Generate and modify Devise views.'"
     end
+
   end
 
 end
