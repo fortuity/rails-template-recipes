@@ -2,7 +2,7 @@ h1. Rails-Template-Recipes
 
 This is a collection of Ruby scripts ("recipes") used to create custom application templates.
 
-h4. Custom Application Templates
+h4. Build Custom Application Templates
 
 Application templates are often used to generate a Rails 3 "starter" or "skeleton" app that can be the basis for many projects.
 
@@ -10,7 +10,7 @@ Here's an example of an application template for a starter app that was assemble
 
 * "rails3-mongoid-devise application template":https://github.com/fortuity/rails3-application-templates/blob/master/rails3-mongoid-devise-template.rb
 
-h4. RailsWizard
+h4. Or Use RailsWizard
 
 "RailsWizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application. RailsWizard might not have all the ingredients or customizations you want for your Rails app. This is a collection of extra recipes that you can add to the RailsWizard mix.
 
