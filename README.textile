@@ -129,19 +129,56 @@ Check that appropriate versions of Ruby and Rails are installed in your developm
 @$ ruby -v@
 @$ rails -v@
 
-h2. RailsWizard Usage Example
+h2. RailsWizard Usage Examples
 
-Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/:
+Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/.
+
+The array @extra_recipes@ should be a list of filenames from this repository (without the *.rb* extension).
+
+h4. Simple Example
+
+Using the cleanup and ban_spiders recipes as a simple example.
 
 <pre>
   git_repo = "https://github.com/fortuity/rails-template-recipes"
   @recipe_list = recipes ; def recipe_list; @recipe_list end
   def extra_recipes; @extra_recipes end
-  @extra_recipes = %w{ git cleanup ban_spiders }
+  @extra_recipes = %w{ cleanup ban_spiders }
   @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
 </pre>
 
-Note that @extra_recipes@ is a list of filenames from this repository (without the *.rb* extension).
+h4. Avoid RailsWizard Errors
+
+Here's how you can avoid errors in RailsWizard recipes for jQuery and Devise. Additionally, this example will replace the RailsWizard recipes for RSPec and Cucumber and add some extras for Mongoid.
+
+In this case, you would select Mongoid as the Database/ORM (and perhaps a templating engine and CSS framework). You would NOT select RSpec, Cucumber, jQuery, or Devise from the RailsWizard graphical menu.
+
+<pre>
+  git_repo = "https://github.com/fortuity/rails-template-recipes"
+  @recipe_list = recipes ; def recipe_list; @recipe_list end
+  def extra_recipes; @extra_recipes end
+  @extra_recipes = %w{ rspec cucumber jquery devise mongoid_cleanup }
+  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
+</pre>
+
+h4. Rails3-Mongoid-Devise Example
+
+Here's a complex example that generates the complete "rails3-mongoid-devise":https://github.com/fortuity/rails3-mongoid-devise example application as described in the "tutorial":http://github.com/fortuity/rails3-mongoid-devise/wiki/Tutorial-%28Walkthrough%29. 
+
+Use the RailsWizard graphical menu to select Mongoid, Haml, and a CSS framework. Do NOT select RSpec, Cucumber, jQuery, or Devise from the RailsWizard graphical menu.
+
+<pre>
+  git_repo = "https://github.com/fortuity/rails-template-recipes"
+  @recipe_list = recipes ; def recipe_list; @recipe_list end
+  def extra_recipes; @extra_recipes end
+  @extra_recipes = %w{ git rspec cucumber jquery devise
+    bson_ext mongoid_cleanup 
+    action_mailer add_user_name 
+    home_page home_page_users seed_database users_page 
+    css_setup application_layout devise_navigation 
+    cleanup ban_spiders }
+  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
+</pre>
 
 h2. How It Works
 
