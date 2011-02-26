@@ -50,7 +50,6 @@ h2. Recipes for General Use
 | "action_mailer.rb":https://github.com/fortuity/rails-template-recipes/blob/master/action_mailer.rb          | Changes ActionMailer defaults             | none               | dkehoe |
 | "ban_spiders.rb":https://github.com/fortuity/rails-template-recipes/blob/master/ban_spiders.rb           | Ban spiders from your site by changing robots.txt | none | dkehoe |
 | "cleanup.rb":https://github.com/fortuity/rails-template-recipes/blob/master/cleanup.rb               | Remove unnecessary files, add READMEs | none | fnichol, dkehoe |
-| "gem_updates.rb":            | unused |  |  |
 | "git.rb":https://github.com/fortuity/rails-template-recipes/blob/master/git.rb                    | Add a gitignore file, initialize new Git repo | Git | fnichol, dkehoe |
 | "gitignore.txt":https://github.com/fortuity/rails-template-recipes/blob/master/gitignore.txt             | The mother of all gitignore files | Git | various |
 | "irb.rb":https://github.com/fortuity/rails-template-recipes/blob/master/irb.rb                    | Add gems for wirble, awesome_print, interactive_editor | none | fnichol |
