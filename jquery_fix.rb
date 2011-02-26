@@ -9,3 +9,5 @@ say_recipe 'jQuery Fix'
 # the standard RailsWizard jQuery recipe has an error that must be fixed with this:
 gsub_file "config/application.rb", /        config.action_view.javascript_expansions\[:defaults\] = \%w\(\)\n/, ""
 
+# Alternatively, use the "jquery" recipe from the fortuity/rails-template-recipes repository. 
+# It substitutes for selecting jQuery in the Javascript Framework section of the RailsWizard web application.
