@@ -46,7 +46,7 @@ You can create an *application-template.rb* file yourself or use one that someon
 
 h2. Recipes for General Use
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | action_mailer.rb          | Changes ActionMailer defaults             | none               | dkehoe |
 | ban_spiders.rb            | Ban spiders from your site by changing robots.txt | none | dkehoe |
 | cleanup.rb                | Remove unnecessary files, add READMEs | none | fnichol, dkehoe |
@@ -56,43 +56,43 @@ h2. Recipes for General Use
 | irb.rb                    | Add gems for wirble, awesome_print, interactive_editor | none | fnichol |
 | rake_init_tasks.rb        | Adds rake init:* tasks | ActiveRecord | fnichol |
 | rvm.rb                    | Sets up an rvm gemset | rvm | fnichol |
-| sample_readme.textile     | Placeholder text for a README file (textile markup)A | none | dkehoe |
+| sample_readme.textile     | Placeholder text for a README file (textile markup) | none | dkehoe |
 | sample_readme.txt         | Placeholder text for a README file (ASCII) | none | dkehoe |
 
 h2. Recipes for Testing and BDD
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | autotest.rb               | Adds Autotest | none | fnichol |
 | cucumber_extras.rb        |  |  |  |
 | rspec_extras.rb           | Changes .rspec file for customized formatting | RSpec | fnichol |
 
 h2. Recipes for ActiveRecord
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | activerecord_extras.rb    | Adds gems for sqlite3, mysql, jruby       | ActiveRecord       | fnichol |
 | exclude_database_yaml.rb  | Exclude database.yml from version control | ActiveRecord | fnichol |
 
 h2. Recipes for Mongoid
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | bson_ext.rb               | Add bson_ext gem for use with Mongoid | Mongoid | dkehoe |
 | mongoid_cleanup.rb        | Updates the RailsWizard Mongoid recipe for a newer Mongoid, etc.| Mongoid | dkehoe |
 
-h2. Fixes for RailsWizard Recipes
+h2. Recipes to Fix RailsWizard 
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | devise_extras.rb          | Replacement for the RailsWizard standard Devise recipe | none | dkehoe |
 | jquery_fix.rb             | Repairs an error in the RailsWizard jQuery recipe | jQuery | dkehoe |
 
 h2. Recipes for Deployment
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | capistrano_lastmile.rb    | Adds gems for Capistrano and lastmile | none  | fnichol |
 | heroku.rb                 | Add a Heroku gem and ignore file | none | dkehoe |
 
 h2. Recipes for the Application Layout
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | application_layout.rb     | Adds application layout with flash messages | ERB or Haml      | dkehoe |
 | css_setup.rb              | Add a stylesheet with styles for a horizontal menu and flash messages | none | dkehoe |
 | flashes_partial.erb.rb    | Add a flashes partial (for ERB) | ERB | fnichol |
@@ -100,7 +100,7 @@ h2. Recipes for the Application Layout
 
 h2. Recipes for the Rails3-Mongoid-Devise Example App
 
-|_. File                    |_. Purpose                                 |_. Dependencies     |_. Authors |
+|_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | add_user_name.rb          | adds name to User, generates Devise views | User model, Devise | dkehoe |
 | devise_navigation.rb      | Add navigation links to the default application layout | Devise | dkehoe |
 | home_page.rb              | Create a home controller, route, and simple view | ERB or Haml | dkehoe |
