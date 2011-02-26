@@ -57,6 +57,7 @@ h2. Recipes for General Use
 | "rvm.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rvm.rb                    | Sets up an rvm gemset | rvm | fnichol |
 | "sample_readme.textile":https://github.com/fortuity/rails-template-recipes/blob/master/sample_readme.textile     | Placeholder text for a README file (textile markup) | none | dkehoe |
 | "sample_readme.txt":https://github.com/fortuity/rails-template-recipes/blob/master/sample_readme.txt         | Placeholder text for a README file (ASCII) | none | dkehoe |
+| "yard.rb":https://github.com/fortuity/rails-template-recipes/blob/master/yard.rb          | Replaces RDoc with Yard for documentation | none | rbrooker |
 
 h2. Recipes for Testing and BDD
 
