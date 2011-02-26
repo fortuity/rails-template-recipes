@@ -63,6 +63,7 @@ h2. Recipes for Testing and BDD
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
 | "autotest.rb":https://github.com/fortuity/rails-template-recipes/blob/master/autotest.rb               | Adds Autotest | none | fnichol |
 | "cucumber_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/cucumber_extras.rb        |  |  |  |
+| "rspec.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rspec.rb          | Replacement for the RailsWizard  RSpec recipe (adds extras) | none | rbrooker, dkehoe |
 | "rspec_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rspec_extras.rb           | Changes .rspec file for customized formatting | RSpec | fnichol |
 
 h2. Recipes for ActiveRecord
