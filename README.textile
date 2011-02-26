@@ -1,10 +1,26 @@
 h1. Rails-Template-Recipes
 
-What's here is a collection of Ruby scripts ("recipes") that are used to customize the application templates that are created by the RailsWizard web app. "Rails Wizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application.
+This is a collection of Ruby scripts ("recipes") used to create custom application templates.
+
+h4. Custom Application Templates
+
+Application templates are often used to generate a Rails 3 "starter" or "skeleton" app that can be the basis for many projects.
+
+Here's an example of an application template that was assembled from these recipes:
+
+* "rails3-mongoid-devise application template":https://github.com/fortuity/rails3-application-templates/blob/master/rails3-mongoid-devise-template.rb
+
+h4. RailsWizard
+
+"Rails Wizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application. Rails Wizard might not have all the ingredients or customizations you want for your Rails app. This is a collection of extra recipes that you can add to the Rails Wizard mix.
+
+Several of the RailsWizard standard recipes are broken (for example, "jQuery":https://github.com/intridea/rails_wizard/issues#issue/27 and "Devise":https://github.com/intridea/rails_wizard/issues#issue/13 recipes). You'll find recipes here to replace or repair some of the broken RailsWizard recipes.
+
+h4. Inspired By
 
 This project was inspired by "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
 
-h4. Related Projects
+h2. Related Projects
 
 Here's a tutorial that shows how an example application is built from a combination of recipes:
 
@@ -26,23 +42,44 @@ Rails has a command that looks like this:
 
 which generates a new Rails application and customizes it according to a script defined in the *application-template.rb* file.
 
-You can create an *application-template.rb* file yourself or use one that someone else has written. Or you can visit "http://railswizard.org/":http://railswizard.org/, select various ingredients from a menu, and programmatically generate a new application template.
+You can create an *application-template.rb* file yourself or use one that someone else has written. Or you can visit "http://railswizard.org/":http://railswizard.org/, select various ingredients from a menu, add recipes from this repository, and programmatically generate a new application template.
 
-Rails Wizard might not have all the ingredients or customizations you want for your Rails app. This is a collection of extra recipes that you can add to the Rails Wizard mix.
+h2. Recipes
 
-h2. Usage Example
-
-Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/:
-
-<pre>
-  git_repo = "https://github.com/fortuity/rails-template-recipes"
-  @recipe_list = recipes ; def recipe_list; @recipe_list end
-  def extra_recipes; @extra_recipes end
-  @extra_recipes = %w{ git cleanup ban_spiders }
-  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
-</pre>
-
-Note that @extra_recipes@ is a list of filenames from this repository (without the *.rb* extension).
+|_. File |_. Name |_. Purpose |_. Authors |
+| action_mailer.rb          | ActionMailer         | Changes ActionMailer defaults                    | dkehoe
+| activerecord_extras.rb    ||  |
+| add_user_name.rb          ||  |
+| application.haml.rb       ||  |
+| application_layout.rb     ||  |
+| autotest.rb               ||  |
+| ban_spiders.rb            ||  |
+| bson_ext.rb               ||  |
+| capistrano_lastmile.rb    ||  |
+| cleanup.rb                ||  |
+| css_setup.rb              ||  |
+| cucumber_extras.rb        ||  |
+| devise_extras.rb          ||  |
+| devise_navigation.rb      ||  |
+| exclude_database_yaml.rb  ||  |
+| flashes_partial.erb.rb    ||  |
+| flashes_partial.haml.rb   ||  |
+| gem_updates.rb            ||  |
+| git.rb                    ||  |
+| gitignore.txt             ||  |
+| heroku.rb                 ||  |
+| home_page.rb              ||  |
+| home_page_users.rb        ||  |
+| irb.rb                    ||  |
+| jquery_fix.rb             ||  |
+| mongoid_cleanup.rb        ||  |
+| rake_init_tasks.rb        ||  |
+| rspec_extras.rb           ||  |
+| rvm.rb                    ||  |
+| sample_readme.textile     ||  |
+| sample_readme.txt         ||  |
+| seed_database.rb          ||  |
+| users_page.rb             ||  |
 
 h2. Dependencies
 
@@ -61,6 +98,20 @@ If you are using rvm, you can see a list of the Ruby versions currently installe
 Check that appropriate versions of Ruby and Rails are installed in your development environment:
 @$ ruby -v@
 @$ rails -v@
+
+h2. Usage Example
+
+Add the following to the *Customize Template* section at "http://railswizard.org/":http://railswizard.org/:
+
+<pre>
+  git_repo = "https://github.com/fortuity/rails-template-recipes"
+  @recipe_list = recipes ; def recipe_list; @recipe_list end
+  def extra_recipes; @extra_recipes end
+  @extra_recipes = %w{ git cleanup ban_spiders }
+  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
+</pre>
+
+Note that @extra_recipes@ is a list of filenames from this repository (without the *.rb* extension).
 
 h2. How It Works
 
