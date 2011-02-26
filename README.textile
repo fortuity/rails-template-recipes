@@ -47,66 +47,66 @@ You can create an *application-template.rb* file yourself or use one that someon
 h2. Recipes for General Use
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| action_mailer.rb          | Changes ActionMailer defaults             | none               | dkehoe |
-| ban_spiders.rb            | Ban spiders from your site by changing robots.txt | none | dkehoe |
-| cleanup.rb                | Remove unnecessary files, add READMEs | none | fnichol, dkehoe |
-| gem_updates.rb            | unused |  |  |
-| git.rb                    | Add a gitignore file, initialize new Git repo | Git | fnichol, dkehoe |
-| gitignore.txt             | The mother of all gitignore files | Git | various |
-| irb.rb                    | Add gems for wirble, awesome_print, interactive_editor | none | fnichol |
-| rake_init_tasks.rb        | Adds rake init:* tasks | ActiveRecord | fnichol |
-| rvm.rb                    | Sets up an rvm gemset | rvm | fnichol |
-| sample_readme.textile     | Placeholder text for a README file (textile markup) | none | dkehoe |
-| sample_readme.txt         | Placeholder text for a README file (ASCII) | none | dkehoe |
+| "action_mailer.rb":https://github.com/fortuity/rails-template-recipes/blob/master/action_mailer.rb          | Changes ActionMailer defaults             | none               | dkehoe |
+| "ban_spiders.rb":https://github.com/fortuity/rails-template-recipes/blob/master/ban_spiders.rb           | Ban spiders from your site by changing robots.txt | none | dkehoe |
+| "cleanup.rb":https://github.com/fortuity/rails-template-recipes/blob/master/cleanup.rb               | Remove unnecessary files, add READMEs | none | fnichol, dkehoe |
+| "gem_updates.rb":            | unused |  |  |
+| "git.rb":https://github.com/fortuity/rails-template-recipes/blob/master/git.rb                    | Add a gitignore file, initialize new Git repo | Git | fnichol, dkehoe |
+| "gitignore.txt":https://github.com/fortuity/rails-template-recipes/blob/master/gitignore.txt             | The mother of all gitignore files | Git | various |
+| "irb.rb":https://github.com/fortuity/rails-template-recipes/blob/master/irb.rb                    | Add gems for wirble, awesome_print, interactive_editor | none | fnichol |
+| "rake_init_tasks.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rake_init_tasks.rb        | Adds rake init:* tasks | ActiveRecord | fnichol |
+| "rvm.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rvm.rb                    | Sets up an rvm gemset | rvm | fnichol |
+| "sample_readme.textile":https://github.com/fortuity/rails-template-recipes/blob/master/sample_readme.textile     | Placeholder text for a README file (textile markup) | none | dkehoe |
+| "sample_readme.txt":https://github.com/fortuity/rails-template-recipes/blob/master/sample_readme.txt         | Placeholder text for a README file (ASCII) | none | dkehoe |
 
 h2. Recipes for Testing and BDD
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| autotest.rb               | Adds Autotest | none | fnichol |
-| cucumber_extras.rb        |  |  |  |
-| rspec_extras.rb           | Changes .rspec file for customized formatting | RSpec | fnichol |
+| "autotest.rb":https://github.com/fortuity/rails-template-recipes/blob/master/autotest.rb               | Adds Autotest | none | fnichol |
+| "cucumber_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/cucumber_extras.rb        |  |  |  |
+| "rspec_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/rspec_extras.rb           | Changes .rspec file for customized formatting | RSpec | fnichol |
 
 h2. Recipes for ActiveRecord
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| activerecord_extras.rb    | Adds gems for sqlite3, mysql, jruby       | ActiveRecord       | fnichol |
-| exclude_database_yaml.rb  | Exclude database.yml from version control | ActiveRecord | fnichol |
+| "activerecord_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/activerecord_extras.rb    | Adds gems for sqlite3, mysql, jruby       | ActiveRecord       | fnichol |
+| "exclude_database_yaml.rb":https://github.com/fortuity/rails-template-recipes/blob/master/exclude_database_yaml.rb  | Exclude database.yml from version control | ActiveRecord | fnichol |
 
 h2. Recipes for Mongoid
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| bson_ext.rb               | Add bson_ext gem for use with Mongoid | Mongoid | dkehoe |
-| mongoid_cleanup.rb        | Updates the RailsWizard Mongoid recipe for a newer Mongoid, etc.| Mongoid | dkehoe |
+| "bson_ext.rb":https://github.com/fortuity/rails-template-recipes/blob/master/bson_ext.rb               | Add bson_ext gem for use with Mongoid | Mongoid | dkehoe |
+| "mongoid_cleanup.rb":https://github.com/fortuity/rails-template-recipes/blob/master/mongoid_cleanup.rb        | Updates the RailsWizard Mongoid recipe for a newer Mongoid, etc.| Mongoid | dkehoe |
 
 h2. Recipes to Fix RailsWizard 
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| devise_extras.rb          | Replacement for the RailsWizard standard Devise recipe | none | dkehoe |
-| jquery_fix.rb             | Repairs an error in the RailsWizard jQuery recipe | jQuery | dkehoe |
+| "devise_extras.rb":https://github.com/fortuity/rails-template-recipes/blob/master/devise_extras.rb          | Replacement for the RailsWizard standard Devise recipe | none | dkehoe |
+| "jquery_fix.rb":https://github.com/fortuity/rails-template-recipes/blob/master/jquery_fix.rb             | Repairs an error in the RailsWizard jQuery recipe | jQuery | dkehoe |
 
 h2. Recipes for Deployment
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| capistrano_lastmile.rb    | Adds gems for Capistrano and lastmile | none  | fnichol |
-| heroku.rb                 | Add a Heroku gem and ignore file | none | dkehoe |
+| "capistrano_lastmile.rb":https://github.com/fortuity/rails-template-recipes/blob/master/capistrano_lastmile.rb    | Adds gems for Capistrano and lastmile | none  | fnichol |
+| "heroku.rb":https://github.com/fortuity/rails-template-recipes/blob/master/heroku.rb                 | Add a Heroku gem and ignore file | none | dkehoe |
 
 h2. Recipes for the Application Layout
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| application_layout.rb     | Adds application layout with flash messages | ERB or Haml      | dkehoe |
-| css_setup.rb              | Add a stylesheet with styles for a horizontal menu and flash messages | none | dkehoe |
-| flashes_partial.erb.rb    | Add a flashes partial (for ERB) | ERB | fnichol |
-| flashes_partial.haml.rb   | Add a flashes partial (for Haml) | Haml | fnichol |
+| "application_layout.rb":https://github.com/fortuity/rails-template-recipes/blob/master/application_layout.rb     | Adds application layout with flash messages | ERB or Haml      | dkehoe |
+| "css_setup.rb":https://github.com/fortuity/rails-template-recipes/blob/master/css_setup.rb              | Add a stylesheet with styles for a horizontal menu and flash messages | none | dkehoe |
+| "flashes_partial.erb.rb":https://github.com/fortuity/rails-template-recipes/blob/master/flashes_partial.erb.rb    | Add a flashes partial (for ERB) | ERB | fnichol |
+| "flashes_partial.haml.rb":https://github.com/fortuity/rails-template-recipes/blob/master/flashes_partial.haml.rb   | Add a flashes partial (for Haml) | Haml | fnichol |
 
 h2. Recipes for the Rails3-Mongoid-Devise Example App
 
 |_. File                    |_.                                  |_. Dependencies     |_. Authors |
-| add_user_name.rb          | adds name to User, generates Devise views | User model, Devise | dkehoe |
-| devise_navigation.rb      | Add navigation links to the default application layout | Devise | dkehoe |
-| home_page.rb              | Create a home controller, route, and simple view | ERB or Haml | dkehoe |
-| home_page_users.rb        | Modify a home page to display a list of users | Home controller, User model, ERB or Haml | dkehoe |
-| seed_database.rb          | Adds a db/seeds.rb file with a default user | Mongoid, User model | dkehoe |
-| users_page.rb             | Add a home page containing links to User pages | User model, ERB or Haml | dkehoe |
+| "add_user_name.rb":https://github.com/fortuity/rails-template-recipes/blob/master/add_user_name.rb          | adds name to User, generates Devise views | User model, Devise | dkehoe |
+| "devise_navigation.rb":https://github.com/fortuity/rails-template-recipes/blob/master/devise_navigation.rb      | Add navigation links to the default application layout | Devise | dkehoe |
+| "home_page.rb":https://github.com/fortuity/rails-template-recipes/blob/master/home_page.rb              | Create a home controller, route, and simple view | ERB or Haml | dkehoe |
+| "home_page_users.rb":https://github.com/fortuity/rails-template-recipes/blob/master/home_page_users.rb        | Modify a home page to display a list of users | Home controller, User model, ERB or Haml | dkehoe |
+| "seed_database.rb":https://github.com/fortuity/rails-template-recipes/blob/master/seed_database.rb          | Adds a db/seeds.rb file with a default user | Mongoid, User model | dkehoe |
+| "users_page.rb":https://github.com/fortuity/rails-template-recipes/blob/master/users_page.rb             | Add a home page containing links to User pages | User model, ERB or Haml | dkehoe |
 
 h2. Dependencies
 
