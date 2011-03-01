@@ -10,15 +10,8 @@ if recipe_list.include? 'mongoid'
   # update to a newer Mongoid version
   gsub_file 'Gemfile', /"mongoid", ">= 2.0.0.beta.19"/, '"mongoid", ">= 2.0.0.rc.7"'
 
-  # modifying 'config/application.rb' file to remove ActiveRecord dependency
-  gsub_file 'config/application.rb', /require 'rails\/all'/ do
-  <<-RUBY
-  require 'action_controller/railtie'
-  require 'action_mailer/railtie'
-  require 'active_resource/railtie'
-  require 'rails/test_unit/railtie'
-  RUBY
-  end
+  # note: the mongoid generator automatically modifies the config/application.rb file
+  # to remove the ActiveRecord dependency by commenting out "require active_record/railtie'"
 
   # remove unnecessary 'config/database.yml' file
   remove_file 'config/database.yml'
@@ -36,7 +29,7 @@ if recipe_list.include? 'mongoid'
   if extra_recipes.include? 'git'
     git :tag => "mongoid_cleanup"
     git :add => '.'
-    git :commit => "-am 'Fix config/application.rb file to remove ActiveRecord dependency.'"
+    git :commit => "-am 'use newer Mongoid gem and remove database.yml file.'"
   end
 
 end
