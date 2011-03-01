@@ -13,16 +13,7 @@ if extra_recipes.include? 'rspec'
   gem 'rspec-rails', '>= 2.5', :group => [:development, :test]
   gem 'database_cleaner', :group => :test
 
-# create a generator configuration file (only used for the RSpec recipe)
-  initializer 'generators.rb', <<-RUBY
-Rails.application.config.generators do |g|
-    g.test_framework = :rspec
-end
-RUBY
-
-  gsub_file 'config/application.rb', /require \'rails\/test_unit\/railtie\' ./, ""
-  say_wizard "Removing test folder (not needed for RSpec)"
-  run 'rm -rf test/'
+  # note: there is no need to specify the RSpec generator in the config/application.rb file
 
   after_bundler do
 
@@ -48,6 +39,13 @@ RUBY
   end
 RUBY
     end
+
+    # remove either possible occurrence of "require rails/test_unit/railtie"
+    gsub_file 'config/application.rb', /require 'rails\/test_unit\/railtie'/, "# require 'rails/test_unit/railtie'"
+    gsub_file 'config/application.rb', /require "rails\/test_unit\/railtie"/, "# require 'rails/test_unit/railtie'"
+    
+    say_wizard "Removing test folder (not needed for RSpec)"
+    run 'rm -rf test/'
 
     if extra_recipes.include? 'git'
       git :tag => "rspec_installation"
