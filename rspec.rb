@@ -12,7 +12,13 @@ if extra_recipes.include? 'rspec'
 
   gem 'rspec-rails', '>= 2.5', :group => [:development, :test]
   gem 'database_cleaner', :group => :test
+  gem 'factory_girl_rails', ">= 1.1.beta1", :group => :test
 
+  if extra_recipes.include? 'mongoid'
+    # include RSpec matchers from the mongoid-rspec gem
+    gem 'mongoid-rspec', ">= 1.4.1", :group => :test
+  end
+  
   # note: there is no need to specify the RSpec generator in the config/application.rb file
 
   after_bundler do
@@ -46,6 +52,28 @@ RUBY
     
     say_wizard "Removing test folder (not needed for RSpec)"
     run 'rm -rf test/'
+
+    if extra_recipes.include? 'mongoid'
+      # configure RSpec to use matchers from the mongoid-rspec gem
+      create_file 'spec/support/mongoid.rb' do 
+      <<-RUBY
+RSpec.configure do |config|
+  config.include Mongoid::Matchers
+end
+RUBY
+      end
+    end
+
+    if extra_recipes.include? 'devise'
+      # add Devise test helpers
+      create_file 'spec/support/devise.rb' do 
+      <<-RUBY
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, :type => :controller
+end
+RUBY
+      end
+    end
 
     if extra_recipes.include? 'git'
       git :tag => "rspec_installation"
