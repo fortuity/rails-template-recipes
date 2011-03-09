@@ -220,7 +220,7 @@ If you start a project that is similar, please contact me and I'll add a note to
 h2. Credits
 
 Are the templates useful to you? Follow me on Twitter:
-"http://twitter.com/yaxdotcom":http://twitter.com/yaxdotcom
+"http://twitter.com/railsinit":http://twitter.com/railsinit
 and tweet some praise. I'd love to know you were helped out by what I've put together.
 
 This project was inspired by "Fletcher Nichol's":http://silversky.ca/ "fnichol/rails-template-recipes":https://github.com/fnichol/rails-template-recipes.
