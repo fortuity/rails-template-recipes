@@ -50,49 +50,39 @@ RUBY
   end
 
   if extra_recipes.include? 'devise'
-    #----------------------------------------------------------------------------
-    # Generate Devise views
-    #----------------------------------------------------------------------------
-    run 'rails generate devise:views'
+    unless extra_recipes.include? 'haml'
+      #----------------------------------------------------------------------------
+      # Generate Devise views (unless you are using Haml)
+      #----------------------------------------------------------------------------
+      run 'rails generate devise:views'
 
-    #----------------------------------------------------------------------------
-    # Modify Devise views to add 'name'
-    #----------------------------------------------------------------------------
-    if recipe_list.include? 'haml'
-       inject_into_file "app/views/devise/registrations/edit.html.haml", :after => "= devise_error_messages!\n" do
-  <<-HAML
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
-HAML
-       end
-    else
-       inject_into_file "app/views/devise/registrations/edit.html.erb", :after => "<%= devise_error_messages! %>\n" do
-  <<-ERB
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
-ERB
-       end
-    end
+      #----------------------------------------------------------------------------
+      # Modify Devise views to add 'name'
+      #----------------------------------------------------------------------------
+      inject_into_file "app/views/devise/registrations/edit.html.erb", :after => "<%= devise_error_messages! %>\n" do
+      <<-ERB
+      <p><%= f.label :name %><br />
+      <%= f.text_field :name %></p>
+  ERB
+      end
 
-    if recipe_list.include? 'haml'
-       inject_into_file "app/views/devise/registrations/new.html.haml", :after => "= devise_error_messages!\n" do
-  <<-HAML
-  %p
-    = f.label :name
-    %br/
-    = f.text_field :name
-HAML
-       end
+      inject_into_file "app/views/devise/registrations/new.html.erb", :after => "<%= devise_error_messages! %>\n" do
+      <<-ERB
+      <p><%= f.label :name %><br />
+      <%= f.text_field :name %></p>
+  ERB
+      end
+
     else
-       inject_into_file "app/views/devise/registrations/new.html.erb", :after => "<%= devise_error_messages! %>\n" do
-  <<-ERB
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
-ERB
-       end
+
+      # copy Haml versions of modified Devise views
+      inside 'app/views/devise/registrations' do
+        get 'https://github.com/fortuity/rails3-application-templates/raw/master/files/rails3-mongoid-devise/app/views/devise/registrations/edit.html.haml', 'edit.html.haml'
+        get 'https://github.com/fortuity/rails3-application-templates/raw/master/files/rails3-mongoid-devise/app/views/devise/registrations/new.html.haml', 'new.html.haml'
+      end
+
     end
+  end
 
     if extra_recipes.include? 'git'
       git :tag => "devise_views"
