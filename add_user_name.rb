@@ -7,12 +7,6 @@
 
 say_recipe 'add_user_name'
 
-if recipe_list.include? 'haml'
-  # the following gems are required to generate Devise views for Haml
-  gem 'hpricot', :group => :development
-  gem 'ruby_parser', :group => :development
-end
-
 after_bundler do
    
   #----------------------------------------------------------------------------
