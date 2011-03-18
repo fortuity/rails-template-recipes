@@ -76,7 +76,6 @@ RUBY
       end
 
     end
-  end
 
     if extra_recipes.include? 'git'
       git :tag => "devise_views"
