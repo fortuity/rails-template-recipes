@@ -8,7 +8,7 @@ say_recipe 'Mongoid Cleanup'
 if recipe_list.include? 'mongoid'
 
   # update to a newer Mongoid version
-  gsub_file 'Gemfile', /"mongoid", ">= 2.0.0.beta.19"/, '"mongoid", ">= 2.0.0.rc.7"'
+  gsub_file 'Gemfile', /"mongoid", ">= 2.0.0.beta.19"/, '"mongoid", ">= 2.0.0.rc.8"'
 
   # note: the mongoid generator automatically modifies the config/application.rb file
   # to remove the ActiveRecord dependency by commenting out "require active_record/railtie'"

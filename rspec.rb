@@ -11,7 +11,7 @@ if extra_recipes.include? 'rspec'
   say_recipe 'RSpec'
 
   gem 'rspec-rails', '>= 2.5', :group => [:development, :test]
-  gem 'database_cleaner', :group => :test
+  gem 'database_cleaner', '>= 0.6.6', :group => :test
   gem 'factory_girl_rails', ">= 1.1.beta1", :group => :test
 
   if extra_recipes.include? 'mongoid'

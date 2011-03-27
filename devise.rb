@@ -9,7 +9,7 @@
 # Utilize Devise for authentication, automatically configured for your selected ORM.
 say_recipe 'Devise'
 
-gem "devise", ">= 1.2.rc"
+gem "devise", ">= 1.2.0"
 
 after_bundler do
 
