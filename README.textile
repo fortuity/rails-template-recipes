@@ -1,3 +1,9 @@
+h1. UPDATE
+
+This project is no longer active or useful. It was developed for an older version of "RailsWizard":http://railswizard.org/.
+
+Use the "rails3_devise_wizard":https://github.com/fortuity/rails3_devise_wizard instead.
+
 h1. Rails-Template-Recipes
 
 This is a collection of Ruby scripts ("recipes") used to create custom application templates.
@@ -13,8 +19,6 @@ Here's an example of an application template for a starter app that was assemble
 h4. Or Use RailsWizard
 
 "RailsWizard":http://railswizard.org/ is a website you can visit to create application templates that are used to generate a Rails 3 web application. RailsWizard might not have all the ingredients or customizations you want for your Rails app. This is a collection of extra recipes that you can add to the RailsWizard mix.
-
-Several of the RailsWizard standard recipes are broken (for example, "jQuery":https://github.com/intridea/rails_wizard/issues#issue/27 and "Devise":https://github.com/intridea/rails_wizard/issues#issue/13 recipes). You'll find recipes here to replace or repair some of the broken RailsWizard recipes.
 
 h4. Inspired By
 
@@ -144,20 +148,6 @@ Using the cleanup and ban_spiders recipes as a simple example.
   @recipe_list = recipes ; def recipe_list; @recipe_list end
   def extra_recipes; @extra_recipes end
   @extra_recipes = %w{ cleanup ban_spiders }
-  @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
-</pre>
-
-h4. Avoid RailsWizard Errors
-
-Here's how you can avoid errors in RailsWizard recipes for jQuery and Devise. Additionally, this example will replace the RailsWizard recipes for RSPec and Cucumber and add some extras for Mongoid.
-
-In this case, you would select Mongoid as the Database/ORM (and perhaps a templating engine and CSS framework). You would NOT select RSpec, Cucumber, jQuery, or Devise from the RailsWizard graphical menu.
-
-<pre>
-  git_repo = "https://github.com/fortuity/rails-template-recipes"
-  @recipe_list = recipes ; def recipe_list; @recipe_list end
-  def extra_recipes; @extra_recipes end
-  @extra_recipes = %w{ rspec cucumber jquery devise mongoid_cleanup }
   @extra_recipes.each { |r| apply "#{git_repo}/raw/master/#{r}.rb" }
 </pre>
 
